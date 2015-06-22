@@ -1,0 +1,11 @@
+<sitemesh>
+  <mapping path="/*" decorator="/WEB-INF/views/layout.jsp"/>
+  
+
+  <mapping path="/gestion/parcautomobile/vehiculeForm" exclue="true"/>
+  <mapping path="/gestion/parcautomobile/saveVehicule" exclue="true"/>
+  <mapping path="/gestion/parcautomobile/saveFacture" exclue="true"/>
+
+  <mapping path="/gestion/transaction/transactionForm" exclue="true"/>
+
+</sitemesh>

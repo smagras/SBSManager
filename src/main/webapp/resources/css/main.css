@@ -1,0 +1,24 @@
+.dataTables_wrapper .ui-toolbar{
+	padding: 25px;
+}
+
+.ui-corner-br{
+	display: none;
+}
+
+.fieldLabel{
+	text-align: right;
+	font-weight: bold;
+	padding-right: 15px;
+   width:1%;
+    white-space:nowrap;
+}
+
+.errorField{
+	border-color: red !important;
+}
+
+.error{
+	color: red !important;
+	font-size: x-small;
+}
