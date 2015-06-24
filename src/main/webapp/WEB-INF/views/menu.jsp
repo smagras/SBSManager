@@ -1,9 +1,8 @@
 <script type="text/javascript">
 $(document).ready(function() {
-	$(".nav-stacked .dropdown").click(function(event){
-		event.preventDefault()
-		$(this).find("ul").show();
-	});
+
+	$(".dropdown ul").show();
+
 	
 	$(".nav-stacked .dropdown ul li").click(function(event){
 
@@ -22,8 +21,10 @@ $(document).ready(function() {
 			Base de données</a>
 		<ul>
 			<li><a href="<c:url value="/gestion/parcautomobile" />">Parc automobile</a></li>
-			<li><a href="<c:url value="/gestion/portefeuilleclient" />">Portefeuille client</a></li>
-			<li><a href="table-dynamic.html">Transactions</a></li>
+			<li><a href="<c:url value="/gestion/portefeuilleclient" />">Portefeuille clients</a></li>
+			<li><a href="<c:url value="/gestion/employee" />">Employées</a></li>
+			<li><a href="<c:url value="/gestion/contrat" />">Contrats</a></li>
+			<li><a href="<c:url value="/gestion/frais" />">Factures</a></li>
 		</ul></li>
 
 
