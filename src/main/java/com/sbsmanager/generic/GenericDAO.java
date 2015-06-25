@@ -94,6 +94,17 @@ public class GenericDAO<T> {
      * 
      * @param obj
      */
+    public void remove(Long id) {
+	T obj = this.find(id);
+	Session session = this.sessionFactory.getCurrentSession();
+	session.delete(obj);
+    }
+
+    /**
+     * Permet la suppression d'une entrée de la base
+     * 
+     * @param obj
+     */
     public void delete(T obj) {
 	Session session = this.sessionFactory.getCurrentSession();
 	session.delete(obj);

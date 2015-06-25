@@ -28,4 +28,12 @@ public class Client extends Personne implements Serializable {
 	this.entreprise = entreprise;
     }
 
+    public List<Contrat> getContratsList() {
+	return contratsList;
+    }
+
+    public void setContratsList(List<Contrat> contratsList) {
+	this.contratsList = contratsList;
+    }
+
 }

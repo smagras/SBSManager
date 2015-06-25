@@ -7,5 +7,9 @@
   <mapping path="/gestion/parcautomobile/saveFacture" exclue="true"/>
 
   <mapping path="/gestion/transaction/transactionForm" exclue="true"/>
+  
+  <mapping path="/gestion/employe/employeForm" exclue="true"/>
+  <mapping path="/gestion/employe/saveEmploye" exclue="true"/>
+
 
 </sitemesh>

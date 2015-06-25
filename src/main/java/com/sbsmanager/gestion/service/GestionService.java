@@ -3,6 +3,7 @@ package com.sbsmanager.gestion.service;
 import java.util.List;
 
 import com.sbsmanager.model.Client;
+import com.sbsmanager.model.Employe;
 import com.sbsmanager.model.Transaction;
 import com.sbsmanager.model.Vehicule;
 
@@ -22,5 +23,14 @@ public interface GestionService {
 
     /** Clients */
     public List<Client> getClients();
+
+    /** Employe */
+    public List<Employe> getEmployeList();
+
+    public Employe getEmploye(Long id);
+
+    public Employe saveEmploye(Employe employe);
+
+    public void removeEmploye(Long id);
 
 }
