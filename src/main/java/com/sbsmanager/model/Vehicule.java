@@ -8,6 +8,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
@@ -19,7 +20,8 @@ public class Vehicule extends Element implements Serializable {
 
     private static final long serialVersionUID = -719107461658755921L;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "source")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "VEHICULE_ID")
     private List<Transaction> facturesList;
 
     @Column(name = "VEHICULE_IMMATRCIULATION")

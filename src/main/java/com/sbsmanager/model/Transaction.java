@@ -9,7 +9,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -18,7 +17,6 @@ public class Transaction implements Serializable {
     private static final long serialVersionUID = 3823290827355050544L;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "SOURCE_ID")
     private Element source;
 
     @Id

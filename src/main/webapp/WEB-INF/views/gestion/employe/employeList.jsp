@@ -12,60 +12,65 @@
 
 	$(document).ready(function() {
 		// Tableau
-	    $('#table').dataTable( {
+	    $('#dyntable').dataTable( {
 	    	  "jQueryUI": true,
 	    	  "bPaginate": false,
 	   
-	    	  "sScrollY" : "200",
+	    	
 	    	  "bInfo":false
 	    } );
 	
 		
 	
 	
-	initDialogBasicSave("#dialog","Employe",700,500,function(id){
-		
-		var dataForm = $( "#formEmploye" ).serializeArray();
-		
-		$.ajax({
-			  method: "POST",
-			  url: "<spring:url value="/gestion/employe/saveEmploye" />",
-			  data: dataForm,
-		}).done(function( msg ) {
-
-			if (msg == "") {
-				$(id).dialog("close");
-				location.reload();
-			}else{
-				$(id).html(msg);
-			}
-		});
-		
-	});
-
-	// Ajouter
-	$("#ajouter").click(function(){
-		
-		openDialogBasic("#dialog","<spring:url value="/gestion/employe/employeForm" />");
-	});
-	
-	$(".edition").click(function(){
-		var id = $(this).data("id");
-		openDialogBasic("#dialog","<spring:url value="/gestion/employe/employeForm" />?id="+id);
-	});
-	
-	$(".supression").click(function(){
-		var id = $(this).data("id");
-		var conf = confirm("Etes vous sûre de vouloir supprimer?") ;
-		if (conf == true){	
+		initDialogBasicSave("#dialog","Employe",700,500,function(id){
+			
+			var dataForm = $( "#formEmploye" ).serializeArray();
+			
 			$.ajax({
 				  method: "POST",
-				  url: "<spring:url value="/gestion/employe/removeEmploye" />?id="+id,
+				  url: "<spring:url value="/gestion/employe/saveEmploye" />",
+				  data: dataForm,
 			}).done(function( msg ) {
-				location.reload();
+	
+				if (msg == "") {
+					$(id).dialog("close");
+					location.reload();
+				}else{
+					$(id).html(msg);
+				}
 			});
-		}
-	});
+			
+		});
+	
+		// Ajouter
+		$("#ajouter").click(function(){
+			
+			openDialogBasic("#dialog","<spring:url value="/gestion/employe/employeForm" />");
+		});
+		
+		$(".detail").click(function(){
+			var id = $(this).data("id");
+			window.location.href = "<spring:url value="/gestion/employe/salaire" />?id="+id;
+		});
+		
+		$(".edition").click(function(){
+			var id = $(this).data("id");
+			openDialogBasic("#dialog","<spring:url value="/gestion/employe/employeForm" />?id="+id);
+		});
+		
+		$(".supression").click(function(){
+			var id = $(this).data("id");
+			var conf = confirm("Etes vous sûre de vouloir supprimer?") ;
+			if (conf == true){	
+				$.ajax({
+					  method: "POST",
+					  url: "<spring:url value="/gestion/employe/removeEmploye" />?id="+id,
+				}).done(function( msg ) {
+					location.reload();
+				});
+			}
+		});
 
 	
 	} );
@@ -89,7 +94,7 @@
 
 	<input id="ajouter" type="button" value="Ajouter un employe">
 	<br><br>
-	<table id="table" class="display"  style="width: 100%;">
+	<table id="dyntable" class="display"  style="width: 100%;">
 
 		<thead>
 			<tr>
@@ -116,7 +121,7 @@
 				<td>${employe.compteBancaire}</td>
 				
 				<td style="vertical-align: bottom;">
-					<img data-id="${employe.identifiant}" class="facture"   style="width: 20px;height: 20px;cursor: pointer;" src="<c:url value="/resources/image/general/transaction.png" />" />
+					<img data-id="${employe.identifiant}" class="detail"   style="width: 20px;height: 20px;cursor: pointer;" src="<c:url value="/resources/image/general/transaction.png" />" />
 					<img data-id="${employe.identifiant}" class="edition"  style="width: 20px;height: 20px;cursor: pointer;"  src="<c:url value="/resources/image/general/edit.png" />"  />
 					<img data-id="${employe.identifiant}" class="supression" style="width: 20px;height: 20px;cursor: pointer;" src="<c:url value="/resources/image/general/delete.png" />" />
 				</td>

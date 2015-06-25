@@ -3,20 +3,12 @@ package com.sbsmanager.model;
 import java.io.Serializable;
 
 import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class Personne implements Serializable {
+public class Personne extends Element implements Serializable {
 
     private static final long serialVersionUID = 9052021788522223174L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PERSONNE_ID")
-    private Long identifiant;
 
     @Column(name = "PERSONNE_NOM")
     private String nom;
@@ -32,14 +24,6 @@ public class Personne implements Serializable {
 
     @Column(name = "PERSONNE_EMAIL")
     private String email;
-
-    public Long getIdentifiant() {
-	return identifiant;
-    }
-
-    public void setIdentifiant(Long identifiant) {
-	this.identifiant = identifiant;
-    }
 
     public String getNom() {
 	return nom;

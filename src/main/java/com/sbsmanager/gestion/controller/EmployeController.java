@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.sbsmanager.gestion.service.GestionService;
 import com.sbsmanager.model.Employe;
+import com.sbsmanager.model.Transaction;
 
 @Controller
 public class EmployeController {
@@ -25,6 +26,31 @@ public class EmployeController {
     public ModelAndView vehiculeList() {
 	ModelAndView model = new ModelAndView("gestion/employe/employeList");
 	model.addObject("listEmployes", gestionService.getEmployeList());
+
+	return model;
+    }
+
+    @RequestMapping(value = "/gestion/employe/salaire", method = RequestMethod.GET)
+    public ModelAndView salaireList(@RequestParam Long id) {
+	ModelAndView model = new ModelAndView("gestion/employe/salaireList");
+	model.addObject("employe", gestionService.getEmploye(id));
+
+	return model;
+    }
+
+    @RequestMapping(value = "/gestion/employe/saveSalaire", method = RequestMethod.POST)
+    @ResponseBody
+    public ModelAndView saveFacture(
+	    @ModelAttribute(value = "transaction") Transaction transaction,
+	    @RequestParam(value = "idEmploye", required = false) Long idEmploye) {
+	ModelAndView model = null;
+
+	Employe employe = gestionService.getEmploye(idEmploye);
+
+	transaction.setSource(employe);
+	employe.getSalaire().add(transaction);
+
+	gestionService.saveEmploye(employe);
 
 	return model;
     }
