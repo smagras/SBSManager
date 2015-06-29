@@ -16,6 +16,7 @@ import com.sbsmanager.gestion.service.GestionService;
 import com.sbsmanager.model.Employe;
 import com.sbsmanager.model.Transaction;
 
+// Employe
 @Controller
 public class EmployeController {
 
