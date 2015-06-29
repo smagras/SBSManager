@@ -11,5 +11,7 @@
   <mapping path="/gestion/employe/employeForm" exclue="true"/>
   <mapping path="/gestion/employe/saveEmploye" exclue="true"/>
 
+  <mapping path="/gestion/devis/devisForm" exclue="true"/>
+  <mapping path="/gestion/devis/saveDevis" exclue="true"/>
 
 </sitemesh>

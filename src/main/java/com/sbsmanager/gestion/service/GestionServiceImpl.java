@@ -7,10 +7,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sbsmanager.gestion.dao.ClientDAOImpl;
+import com.sbsmanager.gestion.dao.DevisDAOImpl;
 import com.sbsmanager.gestion.dao.EmployeDAOImpl;
 import com.sbsmanager.gestion.dao.TransactionDAOImpl;
 import com.sbsmanager.gestion.dao.VehiculeDAOImpl;
 import com.sbsmanager.model.Client;
+import com.sbsmanager.model.Devis;
 import com.sbsmanager.model.Employe;
 import com.sbsmanager.model.Transaction;
 import com.sbsmanager.model.Vehicule;
@@ -30,6 +32,9 @@ public class GestionServiceImpl implements GestionService {
 
     @Autowired
     private EmployeDAOImpl employeDAOImpl;
+
+    @Autowired
+    private DevisDAOImpl devisDAOImpl;
 
     @Override
     public List<Vehicule> getVehiculesList() {
@@ -82,6 +87,27 @@ public class GestionServiceImpl implements GestionService {
 	employe.setSalaire(null);
 	employeDAOImpl.save(employe);
 	employeDAOImpl.remove(id);
+    }
+
+    @Override
+    public List<Devis> getDevisList() {
+	return devisDAOImpl.findAll();
+    }
+
+    @Override
+    public Devis getDevis(Long id) {
+	return devisDAOImpl.find(id);
+    }
+
+    @Override
+    public Devis saveDevis(Devis employe) {
+	return devisDAOImpl.save(employe);
+    }
+
+    @Override
+    public void removeDevis(Long id) {
+	devisDAOImpl.remove(id);
+
     }
 
 }

@@ -15,7 +15,7 @@ public class Client extends Personne implements Serializable {
     private static final long serialVersionUID = 513134381285995165L;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "client")
-    private List<Contrat> contratsList;
+    private List<Devis> contratsList;
 
     @Column(name = "CLIENT_ENTREPRISE")
     private String entreprise;
@@ -28,11 +28,11 @@ public class Client extends Personne implements Serializable {
 	this.entreprise = entreprise;
     }
 
-    public List<Contrat> getContratsList() {
+    public List<Devis> getContratsList() {
 	return contratsList;
     }
 
-    public void setContratsList(List<Contrat> contratsList) {
+    public void setContratsList(List<Devis> contratsList) {
 	this.contratsList = contratsList;
     }
 
