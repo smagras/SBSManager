@@ -1,3 +1,4 @@
+
 package com.sbsmanager.model;
 
 import java.io.Serializable;
