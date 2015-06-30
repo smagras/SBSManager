@@ -49,14 +49,10 @@
 			openDialogBasic("#dialog","<spring:url value="/gestion/devis/devisForm" />");
 		});
 		
-		$(".detail").click(function(){
-			var id = $(this).data("id");
-			window.location.href = "<spring:url value="/gestion/devis/salaire" />?id="+id;
-		});
 		
 		$(".edition").click(function(){
 			var id = $(this).data("id");
-			openDialogBasic("#dialog","<spring:url value="/gestion/devis/devisForm" />?id="+id);
+			window.location.href = "<spring:url value="/gestion/devis/detail" />?id="+id;
 		});
 		
 		$(".supression").click(function(){
@@ -89,11 +85,11 @@
 	</div>
 
 </div>
-<br>
-<div>
 
-	<input id="ajouter" type="button" value="Ajouter un devis">
-	<br><br>
+<div>
+	<div class="buttonArea" >
+		<input id="ajouter" type="button" value="Ajouter un devis">
+	</div>
 	<table id="dyntable" class="display"  style="width: 100%;">
 
 		<thead>
@@ -119,7 +115,6 @@
 				<td>${devis.coutHorraire}</td>
 				
 				<td style="vertical-align: bottom;">
-					<img data-id="${devis.identifiant}" class="detail"   style="width: 20px;height: 20px;cursor: pointer;" src="<c:url value="/resources/image/general/transaction.png" />" />
 					<img data-id="${devis.identifiant}" class="edition"  style="width: 20px;height: 20px;cursor: pointer;"  src="<c:url value="/resources/image/general/edit.png" />"  />
 					<img data-id="${devis.identifiant}" class="supression" style="width: 20px;height: 20px;cursor: pointer;" src="<c:url value="/resources/image/general/delete.png" />" />
 				</td>

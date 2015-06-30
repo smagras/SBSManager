@@ -137,15 +137,15 @@ $(function () {
 	</div>
 
 </div>
-
+<div class="buttonArea">
+	<input type="button" id="ajouterFacture" value="Ajouter une facture" />
+</div>
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 
 <br>
 
 <br>
-<div align="right">
-	<input type="button" id="ajouterFacture" value="Ajouter une facture" />
-</div>
+
 <br>
 <table id="factureTable" class="display"  style="width: 100%;">
 

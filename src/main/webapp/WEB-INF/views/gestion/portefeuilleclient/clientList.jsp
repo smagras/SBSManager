@@ -39,11 +39,11 @@
 	</div>
 
 </div>
-<br>
-<div>
 
-	<input id="ajouter" type="button" value="Ajouter un client">
-	<br><br>
+<div>
+	<div class="buttonArea" >
+		<input id="ajouter" type="button" value="Ajouter un client">
+	</div>
 	<table id="table" class="display"  style="width: 100%;">
 
 		<thead>

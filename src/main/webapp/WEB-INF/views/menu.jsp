@@ -22,7 +22,7 @@ $(document).ready(function() {
 		<ul style="visibility: visible;display: block;">
 			<li><a href="<c:url value="/gestion/parcautomobile" />">Parc automobile</a></li>
 			<li><a href="<c:url value="/gestion/portefeuilleclient" />">Portefeuille clients</a></li>
-			<li><a href="<c:url value="/gestion/employe" />">Employés</a></li>
+			<li><a href="<c:url value="/gestion/employe" />">Ressources humaines</a></li>
 			<li><a href="<c:url value="/gestion/devis" />">Devis et contrats</a></li>
 			<li><a href="<c:url value="/gestion/frais" />">Factures</a></li>
 		</ul></li>

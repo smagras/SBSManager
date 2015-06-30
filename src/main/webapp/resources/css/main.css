@@ -23,3 +23,7 @@
 	color: red !important;
 	font-size: x-small;
 }
+
+.buttonArea{
+	text-align: right;width: 98.5%;background-color: rgb(240,240,240);padding:10px;margin-bottom: 10px;
+}

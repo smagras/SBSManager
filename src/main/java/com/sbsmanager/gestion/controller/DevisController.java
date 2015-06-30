@@ -30,9 +30,23 @@ public class DevisController {
 	return model;
     }
 
+    @RequestMapping(value = "/gestion/devis/detail", method = RequestMethod.GET)
+    public ModelAndView devisDetailForm(
+	    @RequestParam(value = "devis", required = false) Devis devis,
+	    @RequestParam(required = false) Long id) {
+	ModelAndView model = new ModelAndView("gestion/devis/devisDetailForm");
+
+	if (id != null) {
+	    devis = gestionService.getDevis(id);
+	}
+	model.addObject("devis", devis);
+
+	return model;
+    }
+
     @RequestMapping(value = "/gestion/devis/devisForm", method = RequestMethod.POST)
     public ModelAndView devisForm(
-	    @RequestParam(value = "employe", required = false) Devis devis,
+	    @RequestParam(value = "devis", required = false) Devis devis,
 	    @RequestParam(required = false) Long id) {
 	ModelAndView model = new ModelAndView("gestion/devis/devisForm");
 

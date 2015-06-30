@@ -137,24 +137,24 @@ $(function () {
 	</div>
 
 </div>
+<div class="buttonArea" >
+	<input type="button" id="ajouterFacture" value="Ajouter un salaire" />
 
+</div>
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 
 <br>
 
 <br>
 
-<div  style="width: 50%;margin: auto;">
-<div align="right">
-	<input type="button" id="ajouterFacture" value="Ajouter un salaire" />
-	<br><br>
-</div>
+<div  >
+
 <table id="factureTable" class="display"  style="width: 100%;">
 
 		<thead>
 			<tr>
 				<th>Date</th>
-				<th>Prix</th>
+				<th>Salaire (Euros)</th>
 				<th>Options</th>
 			</tr>
 		</thead>

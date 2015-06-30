@@ -90,11 +90,12 @@
 	</div>
 
 </div>
-<br>
-<div>
 
-	<input id="ajouter" type="button" value="Ajouter un vehicule">
-	<br><br>
+<div>
+	<div class="buttonArea" >
+		<input id="ajouter" type="button" value="Ajouter un vehicule">
+	</div>
+
 	<table id="dyntable" class="display"  style="width: 100%;">
 
 		<thead>
