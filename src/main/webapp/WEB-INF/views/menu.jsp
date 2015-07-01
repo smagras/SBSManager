@@ -17,18 +17,27 @@ $(document).ready(function() {
 	<li class="nav-header">Navigation</li>
 	<li class="active"><a href="dashboard.html"><span
 			class="iconfa-laptop"></span> Dashboard</a></li>
-	<li class="dropdown"><a href=""><span class="iconfa-th-list"></span>
-			Gestion</a>
-		<ul style="visibility: visible;display: block;">
-			<li><a href="<c:url value="/gestion/parcautomobile" />">Parc automobile</a></li>
-			<li><a href="<c:url value="/gestion/portefeuilleclient" />">Portefeuille clients</a></li>
-			<li><a href="<c:url value="/gestion/employe" />">Ressources humaines</a></li>
-			<li><a href="<c:url value="/gestion/devis" />">Devis et contrats</a></li>
+			
+
+	
+	<li class="dropdown">
+		<a href=""><span class="iconfa-th-list"></span>Gestion</a>
+		<ul style="visibility: visible; display: block;">
+			<li><a href="<c:url value="/gestion/parcautomobile" />">Parc
+					automobile</a></li>
+			<li><a href="<c:url value="/gestion/portefeuilleclient" />">Portefeuille
+					clients</a></li>
+			<li><a href="<c:url value="/gestion/employe" />">Ressources
+					humaines</a></li>
+			<li><a href="<c:url value="/gestion/devis" />">Devis et
+					contrats</a></li>
 			<li><a href="<c:url value="/gestion/frais" />">Factures</a></li>
-		</ul></li>
+		</ul>
+	</li>
+	
 
 
-<li class="dropdown"><a href=""><span class="iconfa-th-list"></span>
+	<li class="dropdown"><a href=""><span class="iconfa-th-list"></span>
 			Statistiques</a>
 		<ul style="visibility: visible;display: block;">
 			<s:url namespace="/" action="vehicules" var="Lien1"></s:url>

@@ -32,9 +32,27 @@ public class ParcAutomobileController {
     }
 
     @RequestMapping(value = "/gestion/parcautomobile/vehicule", method = RequestMethod.GET)
-    public ModelAndView factureList(@RequestParam Long id) {
+    public ModelAndView vehiculeDetail(@RequestParam Long id) {
 	ModelAndView model = new ModelAndView(
-		"gestion/parcautomobile/factureList");
+		"gestion/parcautomobile/vehiculeDetail");
+	model.addObject("vehicule", gestionService.getVehicule(id));
+
+	return model;
+    }
+
+    @RequestMapping(value = "/gestion/parcautomobile/vehiculegeneralform", method = RequestMethod.POST)
+    public ModelAndView vehiculeDetailGeneralForm(@RequestParam Long id) {
+	ModelAndView model = new ModelAndView(
+		"gestion/parcautomobile/vehiculeDetailGeneralForm");
+	model.addObject("vehicule", gestionService.getVehicule(id));
+
+	return model;
+    }
+
+    @RequestMapping(value = "/gestion/parcautomobile/vehiculefactureslist", method = RequestMethod.POST)
+    public ModelAndView vehiculeDetailFactureList(@RequestParam Long id) {
+	ModelAndView model = new ModelAndView(
+		"gestion/parcautomobile/vehiculeDetailFactureList");
 	model.addObject("vehicule", gestionService.getVehicule(id));
 
 	return model;
