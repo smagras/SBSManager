@@ -98,7 +98,7 @@
 				<th>Description</th>
 				<th>Client</th>
 				<th>Statut</th>
-				<th>Cout horraire</th>
+	
 				<th>Option</th>
 			</tr>
 		</thead>
@@ -112,7 +112,7 @@
 				<td>${devis.description}</td>
 				<td>${devis.client.nom} ${devis.client.prenom}</td>
 				<td>${devis.statut}</td>
-				<td>${devis.coutHorraire}</td>
+
 				
 				<td style="vertical-align: bottom;">
 					<img data-id="${devis.identifiant}" class="edition"  style="width: 20px;height: 20px;cursor: pointer;"  src="<c:url value="/resources/image/general/edit.png" />"  />

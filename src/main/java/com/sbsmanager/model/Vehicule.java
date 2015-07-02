@@ -15,8 +15,10 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.sbsmanager.generic.GenericEntity;
+
 @Entity
-public class Vehicule extends Element implements Serializable {
+public class Vehicule extends GenericEntity implements Serializable {
 
     private static final long serialVersionUID = -719107461658755921L;
 

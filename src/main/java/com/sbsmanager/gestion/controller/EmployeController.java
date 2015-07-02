@@ -48,7 +48,6 @@ public class EmployeController {
 
 	Employe employe = gestionService.getEmploye(idEmploye);
 
-	transaction.setSource(employe);
 	employe.getSalaire().add(transaction);
 
 	gestionService.saveEmploye(employe);

@@ -1,24 +1,21 @@
-package com.sbsmanager.model;
+package com.sbsmanager.generic;
 
 import java.io.Serializable;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
 
-@Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-public class Element implements Serializable {
+@MappedSuperclass
+public class GenericEntity implements Serializable {
 
     private static final long serialVersionUID = 6084331548356324351L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ELEMENT_ID")
+    @Column(name = "IDENTIFIANT")
     private Long identifiant;
 
     public Long getIdentifiant() {

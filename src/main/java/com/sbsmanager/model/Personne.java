@@ -5,8 +5,10 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
+import com.sbsmanager.generic.GenericEntity;
+
 @MappedSuperclass
-public class Personne extends Element implements Serializable {
+public class Personne extends GenericEntity implements Serializable {
 
     private static final long serialVersionUID = 9052021788522223174L;
 

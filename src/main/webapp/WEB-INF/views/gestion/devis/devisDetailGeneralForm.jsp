@@ -27,12 +27,7 @@
 				<td><form:textarea  cssErrorClass="errorField" path="description" style="width:500px;height:80px;" />
 			</tr>
 			
-			<tr>
-				<td class="fieldLabel">Cout horraire</td>
-				<td><form:input  cssErrorClass="errorField" path="coutHorraire" />
-			</tr>
-			
-			
+
 		</table>
 	</form:form>
 	</div>

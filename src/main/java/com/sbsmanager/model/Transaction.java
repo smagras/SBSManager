@@ -5,24 +5,13 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+
+import com.sbsmanager.generic.GenericEntity;
 
 @Entity
-public class Transaction implements Serializable {
+public class Transaction extends GenericEntity implements Serializable {
 
     private static final long serialVersionUID = 3823290827355050544L;
-
-    @OneToOne(fetch = FetchType.EAGER)
-    private Element source;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "TRANSACTION_ID")
-    private Long identifiant;
 
     @Column(name = "TRANSACTION_VALEUR")
     private Float valeur;
@@ -66,22 +55,6 @@ public class Transaction implements Serializable {
 
     public void setDescription(String description) {
 	this.description = description;
-    }
-
-    public Element getSource() {
-	return source;
-    }
-
-    public void setSource(Element source) {
-	this.source = source;
-    }
-
-    public Long getIdentifiant() {
-	return identifiant;
-    }
-
-    public void setIdentifiant(Long identifiant) {
-	this.identifiant = identifiant;
     }
 
 }

@@ -23,11 +23,7 @@
 			<td class="fieldLabel">Description</td>
 			<td><form:input  cssErrorClass="errorField" path="description" />*
 		</tr>
-		
-		<tr>
-			<td class="fieldLabel">Cout horraire</td>
-			<td><form:input  cssErrorClass="errorField" path="coutHorraire" />
-		</tr>
+	
 		
 		
 	</table>

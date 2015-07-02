@@ -66,7 +66,6 @@ public class ParcAutomobileController {
 	ModelAndView model = null;
 
 	Vehicule vehicule = gestionService.getVehicule(idVehicule);
-	transaction.setSource(vehicule);
 	vehicule.getFacturesList().add(transaction);
 
 	gestionService.saveVehicule(vehicule);

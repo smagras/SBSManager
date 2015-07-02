@@ -10,8 +10,10 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import com.sbsmanager.generic.GenericEntity;
+
 @Entity
-public class Devis extends Element implements Serializable {
+public class Devis extends GenericEntity implements Serializable {
 
     private static final long serialVersionUID = 909408253914718578L;
 
@@ -20,9 +22,6 @@ public class Devis extends Element implements Serializable {
 
     @Column(name = "DEVIS_DESCRIPTION")
     private String description;
-
-    @Column(name = "DEIVS_COUTHEURE")
-    private Float coutHorraire;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "CLIENT_ID")
@@ -58,14 +57,6 @@ public class Devis extends Element implements Serializable {
 
     public void setClient(Client client) {
 	this.client = client;
-    }
-
-    public Float getCoutHorraire() {
-	return coutHorraire;
-    }
-
-    public void setCoutHorraire(Float coutHorraire) {
-	this.coutHorraire = coutHorraire;
     }
 
     public EnumDevisStatut getStatut() {
