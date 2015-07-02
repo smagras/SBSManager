@@ -66,6 +66,16 @@ public class GestionServiceImpl implements GestionService {
     public List<Client> getClients() {
 	return clientDAOImpl.findAll();
     }
+    
+    @Override
+    public void saveClient(Client client) {
+	clientDAOImpl.save(client);
+    }
+    
+    @Override
+    public Client getClient(Long id) {
+	return clientDAOImpl.find(id);
+    }
 
     @Override
     public List<Employe> getEmployeList() {

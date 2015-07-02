@@ -24,7 +24,11 @@ public interface GestionService {
     public Transaction getTransaction(Long idTransaction);
 
     /** Clients */
+    public void saveClient(Client client);
+    
     public List<Client> getClients();
+    
+    public Client getClient(Long id);
 
     /** Employe */
     public List<Employe> getEmployeList();

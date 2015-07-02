@@ -12,6 +12,33 @@
 <script>
 
 	$(document).ready(function() {
+		
+		// Init
+		
+		initDialogBasicSave("#dialog","Ajouter un client",700,500,function(id){
+				
+				var dataForm = $( "#formClient" ).serializeArray();
+				
+				$.ajax({
+					  method: "POST",
+					  url: "<spring:url value="/gestion/portefeuilleclient/saveClient" />",
+					  data: dataForm,
+				}).done(function( msg ) {
+
+					if (msg == "") {
+						$(id).dialog("close");
+						location.reload();
+					}else{
+						$(id).html(msg);
+					}
+				});
+				
+		});
+		
+		initDialogBasic("#detaildialog","Facture du vehicule",1000,1300);
+		
+		
+	
 		// Tableau
 	    $('#table').dataTable( {
 	    	  "jQueryUI": true,
@@ -21,6 +48,12 @@
 	    	  "bInfo":false
 	    } );
 	
+		
+	 	// Ajouter
+		$("#ajouter").click(function(){
+			
+			openDialogBasic("#dialog","<spring:url value="/gestion/portefeuilleclient/clientForm" />");
+		});
 		
 	} );
 	

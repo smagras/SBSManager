@@ -10,35 +10,40 @@
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css" />" />
 </head>
 
-<form:form id="formEmploye" modelAttribute="employe" method="POST" style="padding:20px;">
+<form:form id="formClient" modelAttribute="client" method="POST" style="padding:20px;">
 	<table style="width: 100%;">
 		<form:hidden path="identifiant"/>
 
 		<tr>
 			<td class="fieldLabel">Nom</td>
-			<td><form:input class="inputMAJ" cssErrorClass="errorField" path="nom" />*
+			<td><form:input class="inputMAJ" cssErrorClass="errorField" path="nom" />
+			<form:errors path="nom" class="error"></form:errors></td>
 		</tr>
 		
 		<tr>
 			<td class="fieldLabel">Prenom</td>
-			<td><form:input  cssErrorClass="errorField" path="prenom" />*
+			<td><form:input class="inputMAJ" cssErrorClass="errorField" path="prenom" />
+			<form:errors path="prenom" class="error"></form:errors></td>
 		</tr>
+
 		<tr>
 			<td class="fieldLabel">Adresse</td>
-			<td><form:input  cssErrorClass="errorField" path="adresse" />
+			<td><form:input cssErrorClass="errorField" path="adresse" />
+			<form:errors path="adresse" class="error"></form:errors></td>
 		</tr>
+
 		<tr>
 			<td class="fieldLabel">Telephone</td>
-			<td><form:input  cssErrorClass="errorField" path="telephone" />
+			<td><form:input cssErrorClass="errorField" path="telephone"  />
+			<form:errors path="telephone" class="error"></form:errors></td>
 		</tr>
+		
 		<tr>
-			<td class="fieldLabel">Email</td>
-			<td><form:input  cssErrorClass="errorField" path="email" />
+			<td class="fieldLabel" >Email</td>
+			<td><form:input cssErrorClass="errorField"  path="email" />
+			<form:errors path="email" class="error"></form:errors></td>
 		</tr>
-		<tr>
-			<td class="fieldLabel">Compte Banquaire</td>
-			<td><form:input  cssErrorClass="errorField" path="compteBancaire" />
-		</tr>
+
 		
 		
 	</table>
