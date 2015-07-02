@@ -49,7 +49,7 @@
 	    $('#dyntable').dataTable( {
 	    	  "jQueryUI": true,
 	    	  "bPaginate": false,
-	  
+	    	  "sScrollY" : "300",
 	    	  "bInfo":false
 	    } );
 	    
@@ -60,16 +60,9 @@
 		});
 		
 		
-		$(".facture").click(function(){
-			var id = $(this).data("id");
-			window.location.href = "<spring:url value="/gestion/parcautomobile/vehicule" />?id="+id;
-
-		});
-		
-		
 		$(".edition").click(function(){
 			var id = $(this).data("id");
-			openDialogBasic("#dialog","<spring:url value="/gestion/parcautomobile/vehiculeForm" />?id="+id);
+			window.location.href = "<spring:url value="/gestion/parcautomobile/vehicule" />?id="+id;
 		});
 		
 		
@@ -128,7 +121,7 @@
 
 				
 				<td style="vertical-align: bottom;">
-					<img data-id="${vehicule.identifiant}" class="facture"   style="width: 20px;height: 20px;cursor: pointer;" src="<c:url value="/resources/image/general/transaction.png" />" />
+				
 					<img data-id="${vehicule.identifiant}" class="edition"  style="width: 20px;height: 20px;cursor: pointer;"  src="<c:url value="/resources/image/general/edit.png" />"  />
 					<img  style="width: 20px;height: 20px;cursor: pointer;" src="<c:url value="/resources/image/general/delete.png" />" />
 				</td>

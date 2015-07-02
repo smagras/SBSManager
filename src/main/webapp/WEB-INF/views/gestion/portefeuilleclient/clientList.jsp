@@ -44,7 +44,7 @@
 	    	  "jQueryUI": true,
 	    	  "bPaginate": false,
 	   
-	    	  "sScrollY" : "200",
+	    	  "sScrollY" : "300",
 	    	  "bInfo":false
 	    } );
 	

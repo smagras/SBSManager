@@ -26,6 +26,10 @@ public class Vehicule extends GenericEntity implements Serializable {
     @JoinColumn(name = "VEHICULE_ID")
     private List<Transaction> facturesList;
 
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "VEHICULE_ID")
+    private List<FicheVehicule> fichesVehiculeList;
+
     @Column(name = "VEHICULE_IMMATRCIULATION")
     @NotBlank
     private String immatriculation;
@@ -117,6 +121,14 @@ public class Vehicule extends GenericEntity implements Serializable {
 
     public void setModele(String modele) {
 	this.modele = modele;
+    }
+
+    public List<FicheVehicule> getFichesVehiculeList() {
+	return fichesVehiculeList;
+    }
+
+    public void setFichesVehiculeList(List<FicheVehicule> fichesVehiculeList) {
+	this.fichesVehiculeList = fichesVehiculeList;
     }
 
 }

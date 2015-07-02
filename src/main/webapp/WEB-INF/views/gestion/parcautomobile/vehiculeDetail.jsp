@@ -68,9 +68,7 @@
   <ul>
     <li><a id="ongl-general" href="#tab-general">Informations générales</a></li>
     <li><a id="ongl-factures" href="#tab-factures">Factures</a></li>
-    <li><a href="#tabs-3">Cout fixes</a></li>
-    <li><a href="#tabs-3">Cout variables</a></li>
-    <li><a href="#tabs-3">Cout fixes</a></li>
+    <li><a href="#tabs-3">Fiches analytiques</a></li>
   </ul>
   <div id="tab-general" >
   </div>
