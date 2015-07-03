@@ -37,5 +37,11 @@
 			<form:errors path="nombreDePaiment" class="error"></form:errors></td>
 		</tr>
 		
+		<tr>
+			<td class="fieldLabel">Taux</td>
+			<td><form:input class="inputMAJ" cssErrorClass="errorField" path="taux" />
+			<form:errors path="taux" class="error"></form:errors></td>
+		</tr>
+		
 	</table>
 </form:form>

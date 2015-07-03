@@ -25,6 +25,9 @@ public class Transaction extends GenericEntity implements Serializable {
     @Column(name = "TRANSACTION_NBDEPAIMENT")
     private Integer nombreDePaiment;
 
+    @Column(name = "TRANSACTION_TAUX")
+    private Float taux;
+
     public Date getDate() {
 	return date;
     }
@@ -55,6 +58,14 @@ public class Transaction extends GenericEntity implements Serializable {
 
     public void setDescription(String description) {
 	this.description = description;
+    }
+
+    public Float getTaux() {
+	return taux;
+    }
+
+    public void setTaux(Float taux) {
+	this.taux = taux;
     }
 
 }

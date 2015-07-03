@@ -76,9 +76,10 @@
 		<thead>
 			<tr>
 				<th>Date</th>
-				<th>Description</th>
+				<th style="width: 40%;">Description</th>
 				<th>Valeur</th>
 				<th>Nombres de paiments</th>
+				<th>Taux</th>
 				<th>Options</th>
 			</tr>
 		</thead>
@@ -90,8 +91,9 @@
 				<td><fmt:formatDate value="${facture.date}"  pattern="dd/MM/yyyy" /></td>
 
 				<td>${facture.description}</td>
-				<td>${facture.valeur}</td>
+				<td><fmt:formatNumber type="currency" value="${facture.valeur}" currencySymbol="&euro;" /></td>
 				<td>${facture.nombreDePaiment}</td>
+				<td>${facture.taux}</td>
 				
 				<td style="vertical-align: bottom;">
 					<img  style="width: 20px;height: 20px;cursor: pointer;"  src="<c:url value="/resources/image/general/edit.png" />" />
