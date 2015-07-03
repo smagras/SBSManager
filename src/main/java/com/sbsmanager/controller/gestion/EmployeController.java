@@ -1,4 +1,4 @@
-package com.sbsmanager.gestion.controller;
+package com.sbsmanager.controller.gestion;
 
 import javax.validation.Valid;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.sbsmanager.gestion.service.GestionService;
 import com.sbsmanager.model.Employe;
 import com.sbsmanager.model.Transaction;
+import com.sbsmanager.service.gestion.GestionService;
 
 // Employe
 @Controller

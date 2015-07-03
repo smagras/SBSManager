@@ -1,5 +1,5 @@
 
-package com.sbsmanager.gestion.service;
+package com.sbsmanager.service.gestion;
 
 import java.util.List;
 

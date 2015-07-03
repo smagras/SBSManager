@@ -1,4 +1,4 @@
-package com.sbsmanager.gestion.dao;
+package com.sbsmanager.dao.personne;
 
 import org.springframework.stereotype.Repository;
 

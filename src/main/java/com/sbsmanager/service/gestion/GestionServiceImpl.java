@@ -1,5 +1,4 @@
-
-package com.sbsmanager.gestion.service;
+package com.sbsmanager.service.gestion;
 
 import java.util.List;
 
@@ -7,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sbsmanager.gestion.dao.ClientDAOImpl;
-import com.sbsmanager.gestion.dao.DevisDAOImpl;
-import com.sbsmanager.gestion.dao.EmployeDAOImpl;
-import com.sbsmanager.gestion.dao.TransactionDAOImpl;
-import com.sbsmanager.gestion.dao.VehiculeDAOImpl;
+import com.sbsmanager.dao.comptabilite.DevisDAOImpl;
+import com.sbsmanager.dao.comptabilite.TransactionDAOImpl;
+import com.sbsmanager.dao.personne.ClientDAOImpl;
+import com.sbsmanager.dao.personne.EmployeDAOImpl;
+import com.sbsmanager.dao.transport.VehiculeDAOImpl;
 import com.sbsmanager.model.Client;
 import com.sbsmanager.model.Devis;
 import com.sbsmanager.model.Employe;
@@ -66,12 +65,12 @@ public class GestionServiceImpl implements GestionService {
     public List<Client> getClients() {
 	return clientDAOImpl.findAll();
     }
-    
+
     @Override
     public void saveClient(Client client) {
 	clientDAOImpl.save(client);
     }
-    
+
     @Override
     public Client getClient(Long id) {
 	return clientDAOImpl.find(id);
