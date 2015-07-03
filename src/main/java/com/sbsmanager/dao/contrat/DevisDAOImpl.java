@@ -1,4 +1,4 @@
-package com.sbsmanager.dao.comptabilite;
+package com.sbsmanager.dao.contrat;
 
 import org.springframework.stereotype.Repository;
 

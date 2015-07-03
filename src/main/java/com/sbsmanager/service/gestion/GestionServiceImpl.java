@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sbsmanager.dao.comptabilite.DevisDAOImpl;
-import com.sbsmanager.dao.comptabilite.TransactionDAOImpl;
+import com.sbsmanager.dao.contrat.DevisDAOImpl;
 import com.sbsmanager.dao.personne.ClientDAOImpl;
 import com.sbsmanager.dao.personne.EmployeDAOImpl;
+import com.sbsmanager.dao.transaction.TransactionDAOImpl;
 import com.sbsmanager.dao.transport.VehiculeDAOImpl;
 import com.sbsmanager.model.Client;
 import com.sbsmanager.model.Devis;
