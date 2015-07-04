@@ -51,8 +51,13 @@
 		
 	 	// Ajouter
 		$("#ajouter").click(function(){
-			
 			openDialogBasic("#dialog","<spring:url value="/gestion/portefeuilleclient/clientForm" />");
+		});
+	 	
+	 	// Modifier
+		$(".edition").click(function(){
+			var id = $(this).data("id");
+			window.location.href = "<spring:url value="/gestion/portefeuilleclient/client" />?id="+id;
 		});
 		
 	} );
@@ -103,7 +108,7 @@
 
 				
 				<td style="vertical-align: bottom;">
-					<img data-id="${vehicule.identifiant}" class="edition"  style="width: 20px;height: 20px;cursor: pointer;"  src="<c:url value="/resources/image/general/edit.png" />"  />
+					<img data-id="${client.identifiant}" class="edition"  style="width: 20px;height: 20px;cursor: pointer;"  src="<c:url value="/resources/image/general/edit.png" />"  />
 					<img  style="width: 20px;height: 20px;cursor: pointer;" src="<c:url value="/resources/image/general/delete.png" />" />
 				</td>
 			 </tr>
