@@ -17,5 +17,6 @@
   <mapping path="/gestion/devis/saveDevis" exclue="true"/>
   
   <mapping path="/gestion/portefeuilleclient/clientForm" exclue="true"/>
+  <mapping path="/gestion/portefeuilleclient/clientgeneralform" exclue="true"/>
 
 </sitemesh>

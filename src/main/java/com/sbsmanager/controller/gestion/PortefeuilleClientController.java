@@ -29,7 +29,7 @@ public class PortefeuilleClientController {
 
 	return model;
     }
-
+    
     @RequestMapping(value = "/gestion/portefeuilleclient/client", method = RequestMethod.GET)
     public ModelAndView clientDetail(@RequestParam Long id) {
 	ModelAndView model = new ModelAndView(
@@ -38,7 +38,7 @@ public class PortefeuilleClientController {
 
 	return model;
     }
-
+    
     @RequestMapping(value = "/gestion/portefeuilleclient/clientgeneralform", method = RequestMethod.POST)
     public ModelAndView clientDetailGeneralForm(@RequestParam Long id) {
 	ModelAndView model = new ModelAndView(
@@ -47,7 +47,7 @@ public class PortefeuilleClientController {
 
 	return model;
     }
-
+    
     @RequestMapping(value = "/gestion/portefeuilleclient/clientForm", method = RequestMethod.POST)
     public ModelAndView clientForm(
 	    @RequestParam(value = "client", required = false) Client client,
@@ -56,16 +56,16 @@ public class PortefeuilleClientController {
 		"gestion/portefeuilleclient/clientForm");
 
 	if (client == null) {
-	    client = new Client();
+		client = new Client();
 	}
 	if (id != null) {
-	    client = gestionService.getClient(id);
+		client = gestionService.getClient(id);
 	}
 	model.addObject("client", client);
 
 	return model;
     }
-
+    
     @RequestMapping(value = "/gestion/portefeuilleclient/saveClient", method = RequestMethod.POST)
     @ResponseBody
     public ModelAndView saveClient(
