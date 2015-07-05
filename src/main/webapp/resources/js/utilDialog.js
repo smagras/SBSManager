@@ -33,19 +33,20 @@ function initDialogBasicSave(dialogID,title,w,h,c_dialogSaveMethod){
 		width:w,
 		title:title,
 		buttons: [
-      			   { 
-      			      text: "Fermer", 
-      			      width:150,
-      			      click: function() { 
-      			    	$(this).dialog( "close" );
-      			      }
-      			   }, { 
+      			    { 
       			      text: "Enregistrer", 
       			      width:150,
       			      click: function() { 
       			    	  c_dialogSaveMethod(dialogID);
       			      }
-      				}]
+      				},
+      				{ 
+        			      text: "Annuler", 
+        			      width:150,
+        			      click: function() { 
+        			    	$(this).dialog( "close" );
+        			      }
+        			 }]
 	});
 	                  	
 }

@@ -1,4 +1,4 @@
-package com.sbsmanager.model;
+package com.sbsmanager.enumeration;
 
 public enum EnumDevisStatut {
 

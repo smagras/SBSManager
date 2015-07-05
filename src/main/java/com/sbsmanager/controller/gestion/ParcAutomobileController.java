@@ -22,6 +22,17 @@ public class ParcAutomobileController {
     @Autowired
     private GestionService gestionService;
 
+    @RequestMapping(value = "/gestion/parcautomobile/factureForm", method = RequestMethod.POST)
+    public ModelAndView getGestionTransactionDialog() {
+	ModelAndView model = new ModelAndView(
+		"gestion/parcautomobile/factureForm");
+
+	Transaction transaction = new Transaction();
+	model.addObject("transaction", transaction);
+
+	return model;
+    }
+
     @RequestMapping(value = "/gestion/parcautomobile", method = RequestMethod.GET)
     public ModelAndView vehiculeList() {
 	ModelAndView model = new ModelAndView(

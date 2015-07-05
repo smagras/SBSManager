@@ -67,7 +67,9 @@
 <div id="tabs" style="height: 650px;">
   <ul>
     <li><a id="ongl-general" href="#tab-general">Informations générales</a></li>
-    <li><a id="ongl-factures" href="#tab-factures">Factures</a></li>
+    <li><a id="ongl-achat" href="#tab-factures">Achat et Financements</a></li>
+    <li><a id="ongl-assurances" href="#tab-factures">Assurances</a></li>
+    <li><a id="ongl-factures" href="#tab-factures">Factures du vehicule</a></li>
     <li><a href="#tabs-3">Fiches analytiques</a></li>
   </ul>
   <div id="tab-general" >
@@ -83,6 +85,7 @@
 			<thead>
 				<tr>
 					<th>Date</th>
+
 					<th>Description</th>
 					<th>Valeur</th>
 					<th>Nombres de paiments</th>
@@ -95,6 +98,7 @@
 				<c:forEach items="${vehicule.facturesList}" var="facture">
 				<tr >
 					<td><fmt:formatDate value="${facture.date}"  pattern="dd/MM/yyyy" /></td>
+					
 	
 					<td>${facture.description}</td>
 					<td>${facture.valeur}</td>

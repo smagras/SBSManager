@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.sbsmanager.enumeration.EnumDevisStatut;
 import com.sbsmanager.generic.GenericEntity;
 
 @Entity

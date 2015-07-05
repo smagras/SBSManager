@@ -18,7 +18,7 @@
 	    	  "jQueryUI": true,
 	    	  "bPaginate": false,
 	   
-	    	  "sScrollY" : "200",
+	    	  "sScrollY" : "400",
 	    	  "bInfo":false
 	    } );
 		
@@ -50,9 +50,7 @@
 		
 		// Ajouer
 		$("#ajouterFacture").click(function(){
-			// Init
-			
-			openDialogBasic("#dialogFacture","<spring:url value="/gestion/transaction/transactionForm" />");
+			openDialogBasic("#dialogFacture","<spring:url value="/gestion/parcautomobile/factureForm" />");
 		});
 		
 		
@@ -75,27 +73,30 @@
 
 		<thead>
 			<tr>
-				<th>Date</th>
-				<th style="width: 40%;">Description</th>
-				<th>Valeur</th>
-				<th>Nombres de paiments</th>
-				<th>Taux</th>
-				<th>Options</th>
+				<th style="width: 10%;">Date</th>
+				<th style="width: 10%;">Type</th>
+				<th style="width: 20%;">Entreprise</th>
+				<th style="width: 30%;">Description</th>
+				<th style="width: 10%;">Valeur</th>
+				<th style="width: 10%;">Nombres de paiments</th>
+				<th style="width: 5%;">Taux</th>
+				<th style="width: 5%;">Options</th>
 			</tr>
 		</thead>
 
-		<tbody style="text-align: right;">
+		<tbody >
 			
 			<c:forEach items="${vehicule.facturesList}" var="facture">
 			<tr >
 				<td><fmt:formatDate value="${facture.date}"  pattern="dd/MM/yyyy" /></td>
-
+				<td>${facture.type}</td>
+				<td>${facture.entreprise}</td>
 				<td>${facture.description}</td>
-				<td><fmt:formatNumber type="currency" value="${facture.valeur}" currencySymbol="&euro;" /></td>
-				<td>${facture.nombreDePaiment}</td>
-				<td>${facture.taux}</td>
+				<td style="text-align: right;"><fmt:formatNumber type="currency" value="${facture.valeur}" currencySymbol="&euro;" /></td>
+				<td style="text-align: right;">${facture.nombreDePaiment}</td>
+				<td style="text-align: right;">${facture.taux}</td>
 				
-				<td style="vertical-align: bottom;">
+				<td style="text-align: right;vertical-align: bottom;">
 					<img  style="width: 20px;height: 20px;cursor: pointer;"  src="<c:url value="/resources/image/general/edit.png" />" />
 					<img  style="width: 20px;height: 20px;cursor: pointer;" src="<c:url value="/resources/image/general/delete.png" />" />
 				</td>

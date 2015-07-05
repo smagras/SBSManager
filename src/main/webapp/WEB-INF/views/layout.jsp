@@ -70,24 +70,6 @@
 		
 
   
-		<script type="text/javascript">
-
-		  
-		$(document)
-		.ready(function() {
-			$('#btnForm').click(function(e) {
-				
-				e.preventDefault();
-
-				$('#mydialog').dialog('open');
-	
-			});
-		
-		});
-		
-
-		</script>	
-
 
 
 </body>
