@@ -100,8 +100,8 @@
 				<th>Modèle</th>
 				<th>Capacité</th>
 				<th>Date d'Achat</th>
-				<th>Date de revision</th>
-				<th>Date d'assurance</th>
+		
+				<th>Prix d'achat</th>
 				<th>Option</th>
 			</tr>
 		</thead>
@@ -117,9 +117,8 @@
 				<td>${vehicule.capacite}</td>
 
 
-				<td><fmt:formatDate value="${vehicule.dateAchat}"  pattern="dd/MM/yyyy" /></td>
-				<td><fmt:formatDate value="${vehicule.dateRevision}"  pattern="dd/MM/yyyy" /></td>
-				<td><fmt:formatDate value="${vehicule.dateAssurance}"  pattern="dd/MM/yyyy" /></td>
+				<td><fmt:formatDate value="${vehicule.achat.date}"  pattern="dd/MM/yyyy" /></td>
+				<td>${vehicule.achat.valeur}</td>
 
 				
 				<td style="vertical-align: bottom;">

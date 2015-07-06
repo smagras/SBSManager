@@ -17,10 +17,15 @@
 	    $('#factureTable').dataTable( {
 	    	  "jQueryUI": true,
 	    	  "bPaginate": false,
-	   
+	    	  "bPaginate": false,
+	    	  "bScrollCollapse": true,
+	    
 	    	  "sScrollY" : "400",
 	    	  "bInfo":false
 	    } );
+		
+
+
 		
 		$("#ajouterFacture").button();
 		
@@ -69,7 +74,7 @@
 	<input type="button" id="ajouterFacture" value="Ajouter une facture" />
 </div>
 
-<table id="factureTable" class="display"  style="width: 100%;">
+<table id="factureTable" class="display"  style="width: 100%;height: 200px !important;">
 
 		<thead>
 			<tr>
@@ -79,7 +84,7 @@
 				<th style="width: 30%;">Description</th>
 				<th style="width: 10%;">Valeur</th>
 				<th style="width: 10%;">Nombres de paiments</th>
-				<th style="width: 5%;">Taux</th>
+				<th style="width: 8%;">Taux</th>
 				<th style="width: 5%;">Options</th>
 			</tr>
 		</thead>
@@ -94,7 +99,7 @@
 				<td>${facture.description}</td>
 				<td style="text-align: right;"><fmt:formatNumber type="currency" value="${facture.valeur}" currencySymbol="&euro;" /></td>
 				<td style="text-align: right;">${facture.nombreDePaiment}</td>
-				<td style="text-align: right;">${facture.taux}</td>
+				<td style="text-align: right;"><fmt:formatNumber type="currency" value="${facture.taux}" currencySymbol="%" /></td>
 				
 				<td style="text-align: right;vertical-align: bottom;">
 					<img  style="width: 20px;height: 20px;cursor: pointer;"  src="<c:url value="/resources/image/general/edit.png" />" />

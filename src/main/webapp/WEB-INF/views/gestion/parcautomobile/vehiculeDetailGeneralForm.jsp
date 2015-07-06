@@ -73,15 +73,11 @@
 		</tr>
 		
 
-		<tr>
-			<td class="fieldLabel">Dernière révision</td>
-			<td></td>
+		<tr >
+			<td class="fieldLabel" style="padding-top: 5px;">Dernier controle technique :</td>
+			<td><fmt:formatDate value="${dernierControle}"  pattern="dd/MM/yyyy" /></td>
 		</tr>
 		
-		<tr>
-			<td class="fieldLabel">Dernière assurance</td>
-			<td></td>
-		</tr>
 
 		
 		

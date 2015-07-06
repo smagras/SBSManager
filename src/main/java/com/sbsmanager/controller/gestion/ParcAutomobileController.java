@@ -1,5 +1,7 @@
 package com.sbsmanager.controller.gestion;
 
+import java.util.Date;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,11 +53,43 @@ public class ParcAutomobileController {
 	return model;
     }
 
+    @RequestMapping(value = "/gestion/parcautomobile/vehiculedetailachatform", method = RequestMethod.POST)
+    public ModelAndView vehiculeDetailAchatForm(
+	    @RequestParam(value = "vehicule", required = false) Vehicule vehicule,
+	    @RequestParam(required = false) Long id) {
+
+	ModelAndView model = new ModelAndView(
+		"gestion/parcautomobile/vehiculeDetailAchatForm");
+
+	if (vehicule == null) {
+	    vehicule = new Vehicule();
+	}
+	if (id != null) {
+	    vehicule = gestionService.getVehicule(id);
+	}
+
+	model.addObject("vehicule", vehicule);
+
+	return model;
+    }
+
     @RequestMapping(value = "/gestion/parcautomobile/vehiculegeneralform", method = RequestMethod.POST)
     public ModelAndView vehiculeDetailGeneralForm(@RequestParam Long id) {
 	ModelAndView model = new ModelAndView(
 		"gestion/parcautomobile/vehiculeDetailGeneralForm");
-	model.addObject("vehicule", gestionService.getVehicule(id));
+	Vehicule vehicule = gestionService.getVehicule(id);
+	model.addObject("vehicule", vehicule);
+
+	// On cherche le dernier controle technique
+	Date dernierControle = null;
+	for (Transaction facture : vehicule.getFacturesList()) {
+	    if (dernierControle == null
+		    || facture.getDate().compareTo(dernierControle) >= 0) {
+		dernierControle = facture.getDate();
+	    }
+	}
+
+	model.addObject("dernierControle", dernierControle);
 
 	return model;
     }
@@ -113,6 +147,22 @@ public class ParcAutomobileController {
 	    gestionService.saveVehicule(vehicule);
 	} else {
 	    modelAndView = vehiculeForm(vehicule, null);
+	}
+	return modelAndView;
+
+    }
+
+    @RequestMapping(value = "/gestion/parcautomobile/saveVehiculeAchat", method = RequestMethod.POST)
+    @ResponseBody
+    public ModelAndView saveVehiculeAchat(
+	    @Valid @ModelAttribute("vehicule") Vehicule vehicule,
+	    BindingResult bindingResult) {
+
+	ModelAndView modelAndView = null;
+	if (!bindingResult.hasErrors()) {
+	    gestionService.saveVehicule(vehicule);
+	} else {
+	    modelAndView = vehiculeDetailAchatForm(vehicule, null);
 	}
 	return modelAndView;
 

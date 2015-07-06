@@ -38,23 +38,7 @@
 			<form:errors path="capacite" class="error"></form:errors></td>
 		</tr>
 		
-		<tr>
-			<td class="fieldLabel" >Date d'achat</td>
-			<td><form:input cssErrorClass="errorField"  path="dateAchat" placeholder="DD/MM/YYYY" />
-			<form:errors path="dateAchat" class="error"></form:errors></td>
-		</tr>
 
-		<tr>
-			<td class="fieldLabel">Date de la révision</td>
-			<td><form:input cssErrorClass="errorField"  path="dateRevision" placeholder="DD/MM/YYYY" />
-			<form:errors path="dateRevision" class="error"></form:errors></td>
-		</tr>
-		
-		<tr>
-			<td class="fieldLabel">Date de l'assurance</td>
-			<td><form:input  cssErrorClass="errorField"  path="dateAssurance" placeholder="DD/MM/YYYY" />
-			<form:errors path="dateAssurance" class="error"></form:errors></td>
-		</tr>
 
 		
 		

@@ -1,7 +1,6 @@
 package com.sbsmanager.model;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -10,10 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import com.sbsmanager.generic.GenericEntity;
 
@@ -46,18 +45,13 @@ public class Vehicule extends GenericEntity implements Serializable {
     @NotBlank
     private String marque;
 
-    @Column(name = "VEHICULE_DATEACHAT")
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    @NotNull
-    private Date dateAchat;
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "TRANSACTION_ID")
+    private Transaction achat;
 
-    @Column(name = "VEHICULE_DATEREVISION")
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date dateRevision;
-
-    @Column(name = "VEHICULE_DATEASSURANCE")
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date dateAssurance;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "VEHICULE_ID")
+    private List<Transaction> emprunt;
 
     public List<Transaction> getFacturesList() {
 	return facturesList;
@@ -91,30 +85,6 @@ public class Vehicule extends GenericEntity implements Serializable {
 	this.marque = marque;
     }
 
-    public Date getDateAchat() {
-	return dateAchat;
-    }
-
-    public void setDateAchat(Date dateAchat) {
-	this.dateAchat = dateAchat;
-    }
-
-    public Date getDateRevision() {
-	return dateRevision;
-    }
-
-    public void setDateRevision(Date dateRevision) {
-	this.dateRevision = dateRevision;
-    }
-
-    public Date getDateAssurance() {
-	return dateAssurance;
-    }
-
-    public void setDateAssurance(Date dateAssurance) {
-	this.dateAssurance = dateAssurance;
-    }
-
     public String getModele() {
 	return modele;
     }
@@ -129,6 +99,22 @@ public class Vehicule extends GenericEntity implements Serializable {
 
     public void setFichesVehiculeList(List<FicheVehicule> fichesVehiculeList) {
 	this.fichesVehiculeList = fichesVehiculeList;
+    }
+
+    public Transaction getAchat() {
+	return achat;
+    }
+
+    public void setAchat(Transaction achat) {
+	this.achat = achat;
+    }
+
+    public List<Transaction> getEmprunt() {
+	return emprunt;
+    }
+
+    public void setEmprunt(List<Transaction> emprunt) {
+	this.emprunt = emprunt;
     }
 
 }

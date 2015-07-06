@@ -8,6 +8,9 @@
   <mapping path="/gestion/parcautomobile/vehiculefactureslist" exclue="true"/>
   <mapping path="/gestion/parcautomobile/vehiculegeneralform" exclue="true"/>
   <mapping path="/gestion/parcautomobile/factureForm" exclue="true"/>
+  <mapping path="/gestion/parcautomobile/vehiculedetailachatform" exclue="true"/>
+  <mapping path="/gestion/parcautomobile/saveVehiculeAchat" exclue="true"/>
+  
 
   <mapping path="/gestion/transaction/transactionForm" exclue="true"/>
   
