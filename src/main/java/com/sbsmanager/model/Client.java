@@ -1,4 +1,3 @@
-
 package com.sbsmanager.model;
 
 import java.io.Serializable;
@@ -8,6 +7,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -15,7 +16,8 @@ public class Client extends Personne implements Serializable {
 
     private static final long serialVersionUID = 513134381285995165L;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "client")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "client_devis", joinColumns = @JoinColumn(name = "DEVIS_ID"))
     private List<Devis> contratsList;
 
     @Column(name = "CLIENT_ENTREPRISE")

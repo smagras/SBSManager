@@ -10,6 +10,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -36,7 +37,7 @@ public class Devis extends GenericEntity implements Serializable {
     private final EnumDevisStatut statut;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "DEVIS_ID")
+    @JoinTable(name = "devis_planification", joinColumns = @JoinColumn(name = "PLANIFICATION_ID"))
     private List<Planification> planificationList;
 
     public Devis() {

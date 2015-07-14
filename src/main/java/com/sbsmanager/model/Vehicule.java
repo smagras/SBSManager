@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
@@ -22,11 +23,11 @@ public class Vehicule extends GenericEntity implements Serializable {
     private static final long serialVersionUID = -719107461658755921L;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "VEHICULE_ID")
+    @JoinTable(name = "vehicule_facture", joinColumns = @JoinColumn(name = "TRANSACTION_ID"))
     private List<Transaction> facturesList;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "VEHICULE_ID")
+    @JoinTable(name = "vehicule_fiches", joinColumns = @JoinColumn(name = "FICHE_ID"))
     private List<FicheVehicule> fichesVehiculeList;
 
     @Column(name = "VEHICULE_IMMATRCIULATION")
@@ -46,11 +47,11 @@ public class Vehicule extends GenericEntity implements Serializable {
     private String marque;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "TRANSACTION_ID")
+    @JoinTable(name = "vehicule_achat", joinColumns = @JoinColumn(name = "TRANSACTION_ID"))
     private Transaction achat;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "VEHICULE_ID")
+    @JoinTable(name = "vehicule_emprunt", joinColumns = @JoinColumn(name = "TRANSACTION_ID"))
     private List<Transaction> emprunt;
 
     public List<Transaction> getFacturesList() {

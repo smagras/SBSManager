@@ -142,6 +142,15 @@ public class ParcAutomobileController {
 	    @Valid @ModelAttribute("vehicule") Vehicule vehicule,
 	    BindingResult bindingResult) {
 
+	// On met a jour l'objet
+	if (vehicule.getIdentifiant() != null) {
+	    Vehicule vehiculeBase = gestionService.getVehicule(vehicule
+		    .getIdentifiant());
+
+	    vehiculeBase.copyNotNullField(vehicule);
+	    vehicule = vehiculeBase;
+	}
+
 	ModelAndView modelAndView = null;
 	if (!bindingResult.hasErrors()) {
 	    gestionService.saveVehicule(vehicule);
@@ -158,8 +167,18 @@ public class ParcAutomobileController {
 	    @Valid @ModelAttribute("vehicule") Vehicule vehicule,
 	    BindingResult bindingResult) {
 
+	// On met a jour l'objet
+	if (vehicule.getIdentifiant() != null) {
+	    Vehicule vehiculeBase = gestionService.getVehicule(vehicule
+		    .getIdentifiant());
+
+	    vehiculeBase.copyNotNullField(vehicule);
+	    vehicule = vehiculeBase;
+	}
+
 	ModelAndView modelAndView = null;
 	if (!bindingResult.hasErrors()) {
+
 	    gestionService.saveVehicule(vehicule);
 	} else {
 	    modelAndView = vehiculeDetailAchatForm(vehicule, null);

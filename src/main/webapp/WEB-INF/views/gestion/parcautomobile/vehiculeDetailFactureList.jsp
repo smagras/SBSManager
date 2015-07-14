@@ -74,7 +74,7 @@
 	<input type="button" id="ajouterFacture" value="Ajouter une facture" />
 </div>
 
-<table id="factureTable" class="display"  style="width: 100%;height: 200px !important;">
+<table id="factureTable" class="display"  style="width: 100%;">
 
 		<thead>
 			<tr>

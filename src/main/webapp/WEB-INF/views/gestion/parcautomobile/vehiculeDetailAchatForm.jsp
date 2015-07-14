@@ -47,13 +47,14 @@
 	<table style="width: 100%;">
 		<form:hidden path="identifiant"/>
 		
-		<form:hidden class="inputMAJ" cssErrorClass="errorField" path="immatriculation" />
-		<form:hidden class="inputMAJ" cssErrorClass="errorField" path="marque" />
-		<form:hidden cssErrorClass="errorField" path="modele" />
-		<form:hidden cssErrorClass="errorField" path="capacite"  />
-		
+		<form:hidden  path="immatriculation" />
+		<form:hidden  path="marque" />
+		<form:hidden  path="modele" />
+		<form:hidden  path="capacite"  />
 
 		<tr>
+			
+
 			<td class="fieldLabel">Date d'achat</td>
 			<td><form:input class="inDate" path="achat.date" /></td>
 		</tr>

@@ -86,7 +86,9 @@ public class GenericDAO<T> {
      */
     public T save(T obj) {
 	Session session = this.sessionFactory.getCurrentSession();
+
 	return (T) session.merge(obj);
+
     }
 
     /**
